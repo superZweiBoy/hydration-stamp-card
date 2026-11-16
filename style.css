@@ -1,0 +1,180 @@
+
+/* 1. General website styling */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 40px 20px;
+    font-family: Arial, sans-serif;
+    background-color: #EAF6FC;
+    color: #34495E;
+}
+
+
+/* 2. Main container */
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 30px;
+    background-color: white;
+    border-radius: 20px;
+    text-align: center;
+}
+
+
+/* 3. Heading */
+
+header h1 {
+    font-size: 28px;
+    color: #299DD5;
+    margin-bottom: 10px;
+}
+
+header p {
+    color: #7A8A99;
+    font-size: 14px;
+}
+
+
+/* 4. Stamp card section */
+
+.stamp-card {
+    margin-top: 30px;
+}
+
+.stamp-card h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+#progress {
+    color: #7A8A99;
+    font-size: 14px;
+}
+
+
+/* 5. Stamp grid */
+
+.stamp-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 12px;
+    margin-top: 25px;
+}
+
+
+/* 6. Individual stamp boxes */
+
+.stamp {
+    aspect-ratio: 1 / 1;
+    border: 2px dashed #B8DFF2;
+    border-radius: 14px;
+    background-color: #F7FCFF;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 22px;
+    cursor: pointer;
+
+    font-family: inherit;
+    color: inherit;
+    padding: 0;
+
+    transition: background-color 0.2s ease,
+                transform 0.2s ease,
+                border-color 0.2s ease;
+}
+
+.stamp:not(:disabled):hover {
+    background-color: #E3F5FC;
+    border-color: #299DD5;
+    transform: translateY(-3px);
+}
+
+.stamp:not(:disabled):active {
+    transform: scale(0.95);
+}
+
+/* Completed stamp styling */
+
+.stamp.completed {
+    background-color: #D9F2FC;
+    border: 2px solid #299DD5;
+    cursor: not-allowed;
+}
+
+/* 7. Reset button */
+
+#reset-button {
+    margin-top: 30px;
+    padding: 12px 25px;
+
+    border: none;
+    border-radius: 10px;
+
+    background-color: #299DD5;
+    color: white;
+
+    font-size: 14px;
+    cursor: pointer;
+}
+
+#reset-button:hover {
+    background-color: #2185B7;
+}
+
+
+/* Progress bar */
+.progress-bar {
+    width: 100%;
+    height: 10px;
+    background-color: #EAF6FC;
+    border-radius: 20px;
+    margin-top: 15px;
+    overflow: hidden;
+}
+
+#progress-fill {
+    width: 0%;
+    height: 100%;
+    background-color: #299DD5;
+    border-radius: 20px;
+    transition: width 0.3s ease;
+}
+
+
+/* Mobile responsiveness */
+
+@media (max-width: 480px) {
+
+    body {
+        padding: 20px 12px;
+    }
+
+    .container {
+        padding: 20px 15px;
+    }
+
+    header h1 {
+        font-size: 23px;
+    }
+
+    .stamp-grid {
+        grid-template-columns: repeat(5, 1fr);
+        gap: 8px;
+    }
+
+    .stamp {
+        font-size: 18px;
+        border-radius: 10px;
+    }
+
+}
+
+
