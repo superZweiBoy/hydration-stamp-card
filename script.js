@@ -31,6 +31,16 @@ function updateProgress() {
 }
 
 
+function showSeal(stamp) {
+
+    const sealImage = document.createElement("img");
+
+    sealImage.src = "images/seal.png";
+    sealImage.alt = "seal face";
+
+    stamp.replaceChildren(sealImage);
+}
+
 // 4. Create the 30 stamp boxes
 for (let day = 1; day <= 30; day++) {
 
@@ -42,7 +52,7 @@ for (let day = 1; day <= 30; day++) {
 
     // Check whether this day was previously completed
     if (completedDays.includes(day)) {
-        stamp.textContent = "💧";
+        showSeal(stamp);
         stamp.disabled = true;
         stamp.classList.add("completed");
     } else {
@@ -56,7 +66,7 @@ for (let day = 1; day <= 30; day++) {
             return;
         }
 
-        stamp.textContent = "💧";
+        showSeal(stamp);
         stamp.disabled = true;
         stamp.classList.add("completed");
 
